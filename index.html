@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Love ❤️ | A Special Surprise Just For You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Background Ambient Aurora & Canvas -->
+  <div class="aurora-glow-1"></div>
+  <div class="aurora-glow-2"></div>
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- STEP 1: LUXURY WAX-SEALED ROMANTIC ENVELOPE (Entry Screen) -->
+  <section id="envelope-screen" class="entry-overlay">
+    <div class="floating-petals-intro"></div>
+    <div class="envelope-wrapper" id="envelopeWrapper">
+      <div class="envelope-card">
+        <div class="envelope-front">
+          <div class="envelope-flap" id="envelopeFlap"></div>
+          <div class="envelope-pocket"></div>
+          <div class="envelope-letter-peek">
+            <span class="peek-text">Happy Birthday My Love 🎂</span>
+          </div>
+          <!-- Wax Seal -->
+          <div class="wax-seal" id="waxSeal" title="Tap to Break the Seal & Open">
+            <div class="wax-inner">
+              <span class="seal-heart">❤️</span>
+              <span class="seal-sub">10.05</span>
+            </div>
+            <div class="seal-pulse"></div>
+          </div>
+        </div>
+      </div>
+      <div class="entry-headings">
+        <h2 class="entry-title">To The Love Of My Life</h2>
+        <p class="entry-subtitle">A special birthday surprise waiting just for you ✨</p>
+        <button class="open-seal-btn" id="openSealBtn">
+          <span>Tap To Open Surprise 💌</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOATING SPOTIFY-STYLE ROMANTIC MUSIC BAR -->
+  <div class="floating-music-bar" id="musicPlayerBar">
+    <div class="music-track-info">
+      <div class="disc-art" id="discArt">
+        <span class="disc-heart">❤️</span>
+      </div>
+      <div class="track-details">
+        <span class="track-title" id="trackTitle">Romantic Piano Serenade</span>
+        <span class="track-artist" id="trackArtist">Playing with love for you</span>
+      </div>
+    </div>
+
+    <!-- Animated Audio Equalizer Bars -->
+    <div class="audio-equalizer" id="equalizer">
+      <span class="bar bar-1"></span>
+      <span class="bar bar-2"></span>
+      <span class="bar bar-3"></span>
+      <span class="bar bar-4"></span>
+      <span class="bar bar-5"></span>
+    </div>
+
+    <div class="music-controls">
+      <button class="ctrl-btn play-pause-btn" id="playPauseBtn" title="Play/Pause">
+        <span id="playIcon">▶</span>
+      </button>
+      <button class="ctrl-btn switch-track-btn" id="switchTrackBtn" title="Switch Romantic Melody">
+        ⏭ <span>Next Song</span>
+      </button>
+      <label class="ctrl-btn upload-audio-btn" for="audioUpload" title="Upload Her Favorite Song">
+        📂 <span>Upload MP3</span>
+      </label>
+      <input type="file" id="audioUpload" accept="audio/*" style="display:none;">
+    </div>
+
+    <audio id="mainAudio" loop preload="auto">
+      <source src="romantic-music.mp3" type="audio/mp3">
+    </audio>
+  </div>
+
+  <!-- FLOATING QUICK CUSTOMIZE BUTTON -->
+  <button class="quick-settings-pill" id="settingsToggleBtn">
+    ⚙️ Edit Names & Photos
+  </button>
+
+  <!-- MAIN EXPERIENCE (Visible after Envelope is opened) -->
+  <main id="mainExperience" class="main-hidden">
+
+    <!-- HERO SECTION: PURE BIRTHDAY CELEBRATION -->
+    <header class="celebration-hero">
+      <div class="hero-badge">
+        <span class="sparkle-icon">✨</span>
+        <span id="displayDateBadge">Celebrating 10th October • Your Special Day</span>
+        <span class="sparkle-icon">✨</span>
+      </div>
+
+      <h1 class="hero-title">
+        Happy Birthday, <br>
+        <span class="glow-name" id="heroName">My Beautiful Queen</span> 👑
+      </h1>
+
+      <p class="hero-subtitle" id="heroQuote">
+        "Today is the day the most precious, gorgeous soul was born into this world. I'm the luckiest person alive to have you by my side."
+      </p>
+
+      <div class="hero-sparkle-tags">
+        <span class="pill-tag">💖 My Whole World</span>
+        <span class="pill-tag">🌸 Prettiest Smile</span>
+        <span class="pill-tag">💍 Forever & Always</span>
+      </div>
+    </header>
+
+    <!-- SECTION 1: SUPIRIMA 3D INTERACTIVE PHOTO GALLERY / SCRAPBOOK -->
+    <section class="romantic-section gallery-section">
+      <div class="section-badge-title">
+        <span class="mini-tag">OUR LOVE STORY</span>
+        <h2>Our Unforgettable Memories 📸</h2>
+        <p class="section-sub">Swipe or click through our favorite moments together. Every second with you is a blessing.</p>
+      </div>
+
+      <!-- 3D Carousel / Slider -->
+      <div class="slider-wrapper">
+        <button class="slider-nav prev-btn" id="sliderPrevBtn" aria-label="Previous Photo">❮</button>
+
+        <div class="carousel-container" id="carouselContainer">
+          <!-- Slide 1 -->
+          <div class="carousel-card active" data-index="0">
+            <div class="card-inner">
+              <div class="img-wrapper">
+                <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80" alt="Memory 1" class="carousel-img">
+                <div class="img-glow-overlay"></div>
+              </div>
+              <div class="card-content">
+                <span class="memory-tag">Chapter 01</span>
+                <h3>The First Time I Looked Into Your Eyes ✨</h3>
+                <p>That exact moment my whole world paused. I knew right there that my heart belonged to you.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-card next" data-index="1">
+            <div class="card-inner">
+              <div class="img-wrapper">
+                <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80" alt="Memory 2" class="carousel-img">
+                <div class="img-glow-overlay"></div>
+              </div>
+              <div class="card-content">
+                <span class="memory-tag">Chapter 02</span>
+                <h3>Your Contagious & Heartwarming Laugh 🌸</h3>
+                <p>Hearing you laugh is genuinely the sweetest sound in the entire universe. It melts all my stress away.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-card" data-index="2">
+            <div class="card-inner">
+              <div class="img-wrapper">
+                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80" alt="Memory 3" class="carousel-img">
+                <div class="img-glow-overlay"></div>
+              </div>
+              <div class="card-content">
+                <span class="memory-tag">Chapter 03</span>
+                <h3>Our Late Night Talks & Endless Laughs 🌙</h3>
+                <p>Hours feel like minutes when I am with you. Talking with you feels like home.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel-card" data-index="3">
+            <div class="card-inner">
+              <div class="img-wrapper">
+                <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&q=80" alt="Memory 4" class="carousel-img">
+                <div class="img-glow-overlay"></div>
+              </div>
+              <div class="card-content">
+                <span class="memory-tag">Chapter 04</span>
+                <h3>Holding Your Hand Through Everything 🤝</h3>
+                <p>No matter where life takes us, through every triumph and every stormy day, I will be holding your hand.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="carousel-card prev" data-index="4">
+            <div class="card-inner">
+              <div class="img-wrapper">
+                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80" alt="Memory 5" class="carousel-img">
+                <div class="img-glow-overlay"></div>
+              </div>
+              <div class="card-content">
+                <span class="memory-tag">Chapter 05</span>
+                <h3>Here's To Growing Old Together 💍</h3>
+                <p>I want all your birthdays, all your mornings, and all your dreams forever.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="slider-nav next-btn" id="sliderNextBtn" aria-label="Next Photo">❯</button>
+      </div>
+
+      <!-- Slide Indicator Dots -->
+      <div class="slider-dots" id="sliderDots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+        <span class="dot" data-index="4"></span>
+      </div>
+
+      <!-- Quick Upload Button to directly replace photos -->
+      <div class="gallery-custom-action">
+        <label for="directPhotoUpload" class="glass-action-btn">
+          📷 Click here to select & replace with her real photos
+        </label>
+        <input type="file" id="directPhotoUpload" accept="image/*" multiple style="display:none;">
+        <span class="photo-hint-text">Select up to 5 photos from your computer to see them live in the 3D gallery!</span>
+      </div>
+    </section>
+
+    <!-- SECTION 2: INTERACTIVE LUXURY BIRTHDAY CAKE -->
+    <section class="romantic-section cake-section">
+      <div class="section-badge-title">
+        <span class="mini-tag">MAKE A BIRTHDAY WISH</span>
+        <h2>Blow The Birthday Candle 🎂</h2>
+        <p class="section-sub">Close your eyes, make a heartfelt wish for this year, and tap the glowing flame!</p>
+      </div>
+
+      <div class="cake-display">
+        <div class="cake-pedestal"></div>
+        <div class="cake-structure">
+          <div class="cake-base">
+            <div class="frosting-strip"></div>
+          </div>
+          <div class="cake-top-tier">
+            <div class="frosting-drops">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="cake-candle" id="mainCandle">
+            <div class="flame-glow"></div>
+            <div class="candle-flame" id="flameElement"></div>
+            <div class="smoke-puff" id="smokeElement"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cake-action-area">
+        <button class="glow-fire-btn" id="blowFlameBtn">
+          💨 Blow Out The Candle
+        </button>
+        <p class="tap-hint" id="tapFlameHint">💡 Or directly tap on the candle flame!</p>
+      </div>
+
+      <div class="wish-reveal-box hidden" id="wishSuccessBox">
+        <div class="congrats-icon">🎉</div>
+        <h3>Happy Birthday My Love! May All Your Dreams Come True! 🥂✨</h3>
+        <p>I wish for you a life filled with pure laughter, radiant health, peace, and endless warmth. I promise to love you more with every single heartbeat.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 3: ROMANTIC HANDWRITTEN LOVE LETTER -->
+    <section class="romantic-section letter-section">
+      <div class="section-badge-title">
+        <span class="mini-tag">DIRECT FROM MY HEART</span>
+        <h2>A Letter For You On Your Birthday 💌</h2>
+      </div>
+
+      <div class="lux-letter-envelope">
+        <div class="letter-parchment">
+          <div class="wax-watermark">❤️</div>
+          <div class="letter-header">
+            <h3>My Darling <span id="letterGfName">Princess</span>,</h3>
+          </div>
+          <div class="letter-paragraphs">
+            <p>
+              On this 10th of October, the world was blessed with the kindest, sweetest, and most gorgeous human being. 
+              Before you walked into my life, love was just a word. But with you, it became my entire world, my peace, and my happiest reason to wake up every morning.
+            </p>
+            <p>
+              Thank you for every smile you've gifted me, every comforting hug, every late night laughter, and for standing by me. 
+              Your presence makes ordinary days feel extraordinary.
+            </p>
+            <p>
+              On your birthday, my only wish is to see you smile endlessly. I promise to always protect you, honor you, respect you, and shower you with genuine love.
+            </p>
+          </div>
+          <div class="letter-footer">
+            <span class="sign-off">Forever & completely yours,</span>
+            <strong class="signature-name" id="letterYourName">Your Love ❤️</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: INTERACTIVE REASONS WHY I ADORE YOU -->
+    <section class="romantic-section reasons-section">
+      <div class="section-badge-title">
+        <span class="mini-tag">ENDLESS LOVE</span>
+        <h2>Reasons Why You Own My Heart 💖</h2>
+        <p class="section-sub">Tap each glass card to reveal a secret reason why I adore you:</p>
+      </div>
+
+      <div class="glass-cards-grid">
+        <div class="glass-reason-card">
+          <div class="card-face face-front">
+            <span class="card-icon">🌸</span>
+            <h4>Reason 01</h4>
+            <span class="card-tap-label">Tap to unlock</span>
+          </div>
+          <div class="card-face face-back">
+            <p>"The warmth in your eyes whenever you look at me — it makes me feel like the most fortunate person on Earth."</p>
+          </div>
+        </div>
+
+        <div class="glass-reason-card">
+          <div class="card-face face-front">
+            <span class="card-icon">✨</span>
+            <h4>Reason 02</h4>
+            <span class="card-tap-label">Tap to unlock</span>
+          </div>
+          <div class="card-face face-back">
+            <p>"Your pure, generous heart. You care so deeply for everyone and make the world a gentler place."</p>
+          </div>
+        </div>
+
+        <div class="glass-reason-card">
+          <div class="card-face face-front">
+            <span class="card-icon">🧸</span>
+            <h4>Reason 03</h4>
+            <span class="card-tap-label">Tap to unlock</span>
+          </div>
+          <div class="card-face face-back">
+            <p>"The silly, adorable little habits and cute expressions you have when you're excited or laughing."</p>
+          </div>
+        </div>
+
+        <div class="glass-reason-card">
+          <div class="card-face face-front">
+            <span class="card-icon">🏰</span>
+            <h4>Reason 04</h4>
+            <span class="card-tap-label">Tap to unlock</span>
+          </div>
+          <div class="card-face face-back">
+            <p>"With you, I don't have to pretend. You are my safe harbor, my best friend, and my home."</p>
+          </div>
+        </div>
+
+        <div class="glass-reason-card">
+          <div class="card-face face-front">
+            <span class="card-icon">💫</span>
+            <h4>Reason 05</h4>
+            <span class="card-tap-label">Tap to unlock</span>
+          </div>
+          <div class="card-face face-back">
+            <p>"How your smile lights up even the gloomiest day. One glance at your face and all my worries vanish."</p>
+          </div>
+        </div>
+
+        <div class="glass-reason-card">
+          <div class="card-face face-front">
+            <span class="card-icon">♾️</span>
+            <h4>Reason 06</h4>
+            <span class="card-tap-label">Tap to unlock</span>
+          </div>
+          <div class="card-face face-back">
+            <p>"Because out of 8 billion people on this planet, my soul chose you — and will choose you again and again in every lifetime."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: PLAYFUL FOREVER PROPOSAL -->
+    <section class="romantic-section proposal-section">
+      <div class="proposal-glass-box">
+        <span class="heart-pulse-icon">💍</span>
+        <h2>One Last Question For The Birthday Girl</h2>
+        <p>Will you promise to hold my hand and walk through this beautiful life together forever?</p>
+
+        <div class="proposal-button-group">
+          <button class="answer-btn yes-promise-btn" id="proposalYesBtn">
+            YES! Forever & Always! 💖
+          </button>
+          <button class="answer-btn playful-no-btn" id="proposalNoBtn">
+            Think about it 😉
+          </button>
+        </div>
+
+        <div class="proposal-success hidden" id="proposalSuccessMsg">
+          <h3>YAYYY! You just made me the happiest soul alive! 🥂🍾</h3>
+          <p>I promise to love you, make you laugh, and keep you safe every day of our lives! Happy Birthday My Love! ❤️</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="lux-footer">
+      <p class="footer-heart">Made with infinite love for <strong>10.05</strong> ❤️</p>
+      <p class="footer-copy">Happy Birthday My Queen • Forever by your side</p>
+    </footer>
+
+  </main>
+
+  <!-- QUICK EDIT & PERSONALIZATION MODAL -->
+  <div class="modal-backdrop hidden" id="settingsModal">
+    <div class="modal-glass-container">
+      <div class="modal-top">
+        <h3>⚙️ Personalize Surprise Details</h3>
+        <button class="modal-close" id="modalCloseBtn">✕</button>
+      </div>
+      <div class="modal-content-body">
+        <div class="input-block">
+          <label>Her Name / Pet Name:</label>
+          <input type="text" id="settingHerName" placeholder="e.g. Dilhani / My Princess / Babe">
+        </div>
+        <div class="input-block">
+          <label>Your Name / Nickname:</label>
+          <input type="text" id="settingYourName" placeholder="e.g. Danan / Your Babe">
+        </div>
+        <div class="input-block">
+          <label>Date Label (e.g. 10th October):</label>
+          <input type="text" id="settingDateText" placeholder="e.g. 10th October • 10.05">
+        </div>
+        <div class="input-block">
+          <label>Upload Her Favorite Romantic Music (MP3):</label>
+          <input type="file" id="modalAudioPicker" accept="audio/*">
+        </div>
+        <div class="modal-btn-row">
+          <button class="glow-fire-btn save-btn" id="saveCustomDetailsBtn">
+            Save & Update Surprise ✨
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
